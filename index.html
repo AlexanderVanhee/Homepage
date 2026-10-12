@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alexander Vanhee</title>
+<meta name="description" content="Alexander Vanhee, maintainer of Bazaar and creator of Gradia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&display=swap">
+<style>
+/* Layout: one centered stack — avatar, name, two icon links */
+:root {
+  --bg: #f3f4f6;
+  --fg: #16181d;
+  --dim: #6b7080;
+  --avatar-bg: #dfe3ea;
+  --display: "Fraunces", Georgia, "Times New Roman", serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #131418; --fg: #eceef2; --dim: #8d93a3; --avatar-bg: #262931; color-scheme: dark; }
+}
+:root[data-theme="dark"] { --bg: #131418; --fg: #eceef2; --dim: #8d93a3; --avatar-bg: #262931; color-scheme: dark; }
+html, body { height: 100%; }
+body { background: var(--bg); color: var(--fg); font-family: system-ui, sans-serif; }
+.page { min-height: 100%; display: grid; place-items: center; padding-inline: 16px; padding-block: 48px; box-sizing: border-box; }
+.stack { display: grid; justify-items: center; gap: 20px; }
+.avatar { width: 112px; height: 112px; border-radius: 50%; overflow: hidden; }
+.avatar img { width: 100%; height: 100%; object-fit: cover; }
+h1 { font-family: var(--display); font-weight: 600; font-size: clamp(30px, 8vw, 42px); letter-spacing: -.01em; margin: 0; text-align: center; }
+.bio { margin: -6px 0 0; max-width: 34ch; text-align: center; color: var(--dim); font-size: 16px; line-height: 1.55; }
+.bio a { color: var(--fg); text-decoration: underline; text-decoration-color: var(--dim); text-underline-offset: 3px; }
+.bio a:hover { text-decoration-color: var(--fg); }
+.w3c { position: fixed; left: 50%; transform: translateX(-50%); bottom: 16px; color: var(--dim); font-size: 13px; text-decoration: underline; text-underline-offset: 3px; }
+.w3c:hover { color: var(--fg); }
+.links { display: flex; gap: 22px; }
+.links a { color: var(--dim); display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; transition: color .15s; }
+.links a:hover { color: var(--fg); }
+.links a:focus-visible { outline: 2px solid var(--fg); outline-offset: 2px; }
+.links svg { width: 26px; height: 26px; fill: currentColor; }
+@media (prefers-reduced-motion: reduce) { .links a { transition: none; } }
+</style>
+</head>
+<body>
+<main class="page">
+  <div class="stack">
+    <div class="avatar"><img src="data:image/png;base64,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" alt=""></div>
+    <h1>Alexander Vanhee</h1>
+    <p class="bio">Maintainer of <a href="https://usebazaar.org/">Bazaar</a> and creator of <a href="https://flathub.org/apps/be.alexandervanhee.gradia">Gradia</a>.</p>
+    <nav class="links">
+      <a href="https://github.com/AlexanderVanhee" aria-label="GitHub" title="GitHub"><svg aria-hidden="true" viewBox="0 0 16 16"><path d="M8 0a8 8 0 0 0-2.53 15.59c.4.07.55-.17.55-.38v-1.33c-2.23.48-2.7-1.07-2.7-1.07-.36-.92-.89-1.17-.89-1.17-.73-.5.05-.49.05-.49.8.06 1.23.83 1.23.83.71 1.22 1.87.87 2.33.66.07-.52.28-.87.5-1.07-1.78-.2-3.65-.89-3.65-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8 8 0 0 0 8 0z"/></svg></a>
+      <a href="https://gitlab.gnome.org/Alexander.Vanhee" aria-label="GNOME GitLab" title="GNOME GitLab"><svg aria-hidden="true" viewBox="92 92 196 196"><path d="M282.83,170.73l-.27-.69-26.14-68.22a6.81,6.81,0,0,0-2.69-3.24,7,7,0,0,0-8,.43,7,7,0,0,0-2.32,3.52l-17.65,54H154.29l-17.65-54A6.86,6.86,0,0,0,134.32,99a7,7,0,0,0-8-.43,6.870,6.870,0,0,0-2.69,3.24L97.44,170l-.26.69a48.54,48.54,0,0,0,16.1,56.1l.09.07.24.17,39.82,29.82,19.7,14.91,12,9.06a8.070,8.070,0,0,0,9.76,0l12-9.06,19.7-14.91,40.06-30,.1-.08A48.56,48.56,0,0,0,282.83,170.73Z"/></svg></a>
+      <a href="#" id="mail" data-u="rednaxela" data-d="gro.emong" aria-label="Email" title="Email"><svg aria-hidden="true" viewBox="0 0 16 16"><path d="M1.75 2.5A1.75 1.75 0 0 0 0 4.25v7.5c0 .97.78 1.75 1.75 1.75h12.5c.97 0 1.75-.78 1.75-1.75v-7.5c0-.97-.78-1.75-1.75-1.75zm.3 1.5h11.9L8 8.1zM1.5 5.2l6.07 4.33a.75.75 0 0 0 .86 0L14.5 5.2v6.55a.25.25 0 0 1-.25.25H1.75a.25.25 0 0 1-.25-.25z"/></svg></a>
+    </nav>
+  </div>
+</main>
+<a class="w3c" id="w3c" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Falexandervanhee.be%2F" title="Validate alexandervanhee.be with the W3C validator">validate</a>
+<script>
+(function () {
+  var a = document.getElementById("mail");
+  var rev = function (s) { return s.split("").reverse().join(""); };
+  a.href = "mailto:" + rev(a.dataset.u) + "v" + "@" + rev(a.dataset.d);
+})();
+</script>
+</body>
+</html>
